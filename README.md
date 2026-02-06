@@ -1,49 +1,220 @@
-Was macht der SystemTweaker Win10?
-SystemTweakWin10 ist ein portabler Windows-Tweaker, der Windows 10 auch auf schwächerer Hardware reibungslos laufen lässt. Es blockiert, optimiert und schaltet gezielt Systemfunktionen wieder frei – auf Wunsch ohne Installation, ohne Chaos in der Registry. Das Tool läuft direkt und bietet beispielsweise die Möglichkeit, den virtuellen Arbeitsspeicher zu erweitern. Dadurch kann Windows mehr Festplattenspeicher (bis zu 32 GB) als „RAM-Ersatz“ nutzen, was besonders bei einer schnellen SSD interessant ist, wenn der physische Arbeitsspeicher knapp wird. Die Registry-Einträge werden so angepasst, dass Windows größere Auslagerungsdateien erlaubt, was hilfreich ist, wenn viele Programme gleichzeitig genutzt werden oder der physische RAM begrenzt ist.
+# 🚀 WinPowerUp
 
-gezielte Systemanpassungen für Windows 10
-batchbasierte Zusatzfunktionen über SystemTuner.bat
-integrierten Installer für saubere Verteilung
-keine Abhängigkeiten, keine Streuverluste
+> **Portabler Windows 10 Optimierer für maximale Performance – auch auf schwächerer Hardware**
 
+WinPowerUp ist ein leistungsstarker Windows-Tweaker, der gezielt Systemfunktionen optimiert, unnötige Dienste deaktiviert und Windows 10 deutlich schneller macht. Das Tool arbeitet ohne Installation direkt und nimmt präzise Registry-Anpassungen vor – ideal für schwächere Hardware oder wenn maximale Systemperformance gefragt ist.
 
-Heruntergeladenen Projektordner vorbereiten
+## ⚠️ **WICHTIGER WARNHINWEIS**
 
-um die exe zu erstellen, musst Du den Advanced Batch to exe instaliert haben,
+**WinPowerUp nimmt tiefgreifende Eingriffe in die Windows-Registry und Systemdienste vor!**
 
-- per Rechtsklick auf batch und
+Diese Änderungen betreffen kritische Systemfunktionen, Sicherheitseinstellungen und das Verhalten von Windows-Komponenten. Unsachgemäße Anwendung kann zu:
+- Systeminstabilität
+- Funktionsverlust von Windows-Features
+- Im Extremfall zu einem vollständigen Systemabsturz
 
-- Wahl im Menu, Bat to exe compile startest du den Vorgang,
+**➡️ Vor der Nutzung UNBEDINGT:**
+- ✅ Einen Wiederherstellungspunkt erstellen
+- ✅ Vollständiges Backup anlegen
+- ✅ Die Auswirkungen der einzelnen Optionen verstehen
 
-- dort wählst Du alles aus was Du noch anpassen möchtest. icon.ico, Name der exe, etc.
+**Die Nutzung erfolgt auf eigene Verantwortung!**
 
+---
 
+## ✨ Features
 
-1. Führe die build_installer.bat aus.
+### 🎯 Optimierungen (einzeln wählbar oder alle auf einmal)
 
-Diese:
+- **[1] Windows Search deaktivieren** – Suchindex-Dienst ausschalten für weniger RAM-Verbrauch
+- **[2] Superfetch / Prefetch deaktivieren** – Reduziert Hintergrund-Aktivität auf SSD-Systemen
+- **[3] Remote Registry deaktivieren** – Sicherheitsoptimierung
+- **[4] Xbox-Dienste deaktivieren** – Gaming-Dienste für Non-Gamer entfernen
+- **[5] OneDrive Autostart entfernen** – Verhindert automatischen OneDrive-Start
+- **[6] Telemetrie / DiagTrack deaktivieren** – Stoppt Datensammlung durch Microsoft
+- **[7] Cortana Hintergrunddienste deaktivieren** – Spart Ressourcen
+- **[8] Autostart-Einträge entfernen** – Löscht alle Autostart-Programme (⚠️ vorsichtig!)
+- **[9] Visuelle Effekte deaktivieren** – Reduziert Animationen für mehr Speed
+- **[10] RAM-Boost via SSD** – ReadyBoost für bis zu 32 GB virtuellen RAM (schnell)
+- **[11] RAM-Boost via HDD** – ReadyBoost über HDD (langsamer, nur wenn keine SSD verfügbar)
+- **[12] Werbung & Vorschläge deaktivieren** – Entfernt Windows-Werbung und -Vorschläge
+- **[99] Rückgängig machen** – Stellt alle Optimierungen wieder her
+- **[0] Alles deaktivieren** – Führt alle Optimierungen gleichzeitig aus
 
-erkennt automatisch den Ordnernamen als Projektnamen
-sucht die .exe
-erzeugt ein passendes .iss-Skript
-startet den Inno Setup Compiler (ISCC.exe)
-erstellt den Installer im Unterordner Output
+### 📦 Zusätzliche Tools
 
+- **SystemTuner.bat** – Hauptprogramm mit interaktivem Menü
+- **install_setup.bat** – Automatischer Inno Setup Installer-Generator
+- **WinPowerUp.iss** – Inno Setup Konfigurationsdatei
 
-Ergebnis Du erhältst eine Setup-Datei, z. B. SystemTweakWin10_Setup.exe, die:
+---
 
-deine .exe installiert
-optional die .bat mitliefert
-Startmenüeinträge setzt
-direkt ausführbar ist
-Und Du kannst die exe verteilen und auf x Geräten installieren.
-⚠️ Warnhinweis
-SystemTweakWin10 nimmt gezielte Eingriffe in die Windows-Registry vor. Diese Änderungen betreffen Systemfunktionen, Sicherheitseinstellungen und Verhalten von Windows-Komponenten. ⚠️ Achtung: Unsachgemäße Anwendung oder unerwartete Systemkonfigurationen können zu Instabilität, Funktionsverlust oder im Extremfall zu einem vollständigen Systemabsturz führen. Die Nutzung erfolgt auf eigene Verantwortung. Vor dem Einsatz wird dringend empfohlen, ein vollständiges Backup oder einen Wiederherstellungspunkt zu erstellen.
+## 📋 Systemanforderungen
 
-INFO: Beide Exe sind im Download Ordner enthalten, viel Spass beim Win10 tweaken
+- **Betriebssystem:** Windows 10 (32/64-bit)
+- **Berechtigung:** Administrator-Rechte erforderlich
+- **Build-Tools (nur für Entwicklung):**
+  - [Advanced Batch to EXE Converter](https://www.battoexeconverter.com/)
+  - [Inno Setup 6](https://jrsoftware.org/isdl.php)
 
+---
 
+## 🚀 Installation & Verwendung
 
-Die install_setup.bat, kannst du in jeden Projektordner mit ner exe tun, in den selben Ordner wie die EXE, egal ob aus einer .bat oder .py erstellt. Die Datei findet in deinem Ordner alles was Sie braucht automatisch.(ganz Wichtig alles muss in dem selben Ordner liegen.)
+### Methode 1: Fertige EXE verwenden (Endbenutzer)
 
-Und baut daraus eine iss, dann mit InnoSetup, in einem Rutsch eine exe mit Installer (welche ohne Python oder X funktioniert, auf jedem Rechner funktioniert.)
+1. **`SystemTweakWin10.exe` herunterladen** (aus dem Download-Ordner/Release)
+2. **Rechtsklick → Als Administrator ausführen**
+3. Gewünschte Optimierungen auswählen
+4. Mit **J** (Ja) bestätigen
+5. Optional: Neustart durchführen
+
+### Methode 2: Installer verwenden
+
+1. **`WinPowerUp_Setup.exe` herunterladen**
+2. Installer ausführen
+3. Installationspfad wählen
+4. Nach Installation: Programm als Administrator starten
+
+### Methode 3: Von Quelle (Entwickler)
+
+1. Repository klonen:
+   ```bash
+   git clone https://github.com/deranderechris/WinPowerUp.git
+   cd WinPowerUp
+   ```
+
+2. **SystemTuner.bat direkt ausführen:**
+   ```cmd
+   Rechtsklick auf SystemTuner.bat → Als Administrator ausführen
+   ```
+
+---
+
+## 🔧 Build-Anleitung (für Entwickler)
+
+### EXE aus BAT-Datei erstellen
+
+1. **[Advanced Batch to EXE Converter](https://www.battoexeconverter.com/) installieren**
+2. **Rechtsklick auf `SystemTuner.bat`**
+3. Im Kontextmenü: **"Compile to EXE"** wählen
+4. Im Converter:
+   - Icon auswählen (optional: `icon.ico`)
+   - EXE-Name festlegen (z.B. `SystemTweakWin10.exe`)
+   - Kompilieren
+
+### Installer erstellen
+
+1. **[Inno Setup 6](https://jrsoftware.org/isdl.php) installieren**
+2. **`install_setup.bat` als Administrator ausführen**
+   
+   Das Skript:
+   - ✅ Erkennt automatisch den Ordnernamen als Projektnamen
+   - ✅ Findet die `.exe`-Datei im Ordner
+   - ✅ Erzeugt automatisch eine `.iss`-Datei
+   - ✅ Startet Inno Setup Compiler (`ISCC.exe`)
+   - ✅ Erstellt den Installer im Unterordner `Output/`
+
+3. **Ergebnis:** `Output/WinPowerUp_Setup.exe`
+
+**Hinweis:** Die `install_setup.bat` ist universell einsetzbar! Lege sie einfach in jeden Projektordner mit einer EXE (egal ob aus `.bat`, `.py` oder anderen Quellen erstellt).
+
+---
+
+## 📖 Verwendung
+
+### Interaktives Menü
+
+Nach dem Start erscheint ein Auswahlmenü:
+
+```
+Waehle die Komponenten, die deaktiviert werden sollen:
+
+[1] Windows Search (Suchindex)
+[2] Superfetch / Prefetch
+[3] Remote Registry
+[4] Xbox Dienste
+[5] OneDrive Autostart
+[6] Telemetrie / DiagTrack
+[7] Cortana Hintergrunddienste
+[8] Autostart-Eintraege (Run Keys)
+[9] Visuelle Effekte (Registry)
+[10] RAM-Boost via SSD (ReadyBoost 32MB)
+[11] RAM-Boost via HDD (ReadyBoost 32MB - langsamer)
+[12] Werbung und Vorschlaege deaktivieren
+[99] Rueckgaengig: Alle Optimierungen wiederherstellen
+[0] Alles deaktivieren
+
+Deine Auswahl (z. B. 1 3 5 oder 0):
+```
+
+### Beispiele
+
+- **Einzelne Optionen:** `1 5 12` (Windows Search, OneDrive, Werbung aus)
+- **Alle Optimierungen:** `0`
+- **Rückgängig machen:** `99`
+
+---
+
+## 🛡️ Sicherheitshinweise
+
+- ✅ **Wiederherstellungspunkt** vor Nutzung erstellen
+- ✅ **Option [99]** zum Rückgängigmachen verwenden
+- ⚠️ **Option [8] (Autostart)** löscht ALLE Autostart-Einträge unwiderruflich
+- ⚠️ Getestete Funktionalität nur auf **Windows 10**
+- ⚠️ Nicht für kritische Produktivsysteme ohne Test verwenden
+
+---
+
+## 📂 Projektstruktur
+
+```
+WinPowerUp/
+├── SystemTuner.bat         # Hauptskript mit Optimierungsfunktionen
+├── SystemTweakWin10.exe    # Kompilierte Version (in Releases)
+├── install_setup.bat       # Automatischer Installer-Generator
+├── WinPowerUp.iss          # Inno Setup Konfiguration
+├── zip_project.bat         # Projekt-Packskript
+├── README.md               # Diese Datei
+└── Output/                 # Generierte Installer (nach Build)
+    └── WinPowerUp_Setup.exe
+```
+
+---
+
+## 🤝 Beitragen
+
+Contributions sind willkommen! Bitte:
+
+1. Fork das Repository
+2. Erstelle einen Feature-Branch (`git checkout -b feature/AmazingFeature`)
+3. Commit deine Änderungen (`git commit -m 'Add some AmazingFeature'`)
+4. Push zum Branch (`git push origin feature/AmazingFeature`)
+5. Öffne einen Pull Request
+
+---
+
+## 📄 Lizenz
+
+Dieses Projekt wird "wie es ist" bereitgestellt ohne jegliche Garantie. Die Nutzung erfolgt auf eigene Verantwortung.
+
+---
+
+## 👨‍💻 Autor
+
+**deranderechris**  
+GitHub: [@deranderechris](https://github.com/deranderechris)
+
+---
+
+## 🎉 Danksagung
+
+- Microsoft für Windows 10
+- Community-Feedback zu Windows-Optimierungen
+- Inno Setup für das großartige Installer-Tool
+
+---
+
+**Viel Erfolg beim Optimieren! 🚀**
+
+> **Tipp:** Teste die Änderungen erst an einem unwichtigen System oder in einer VM, bevor du sie auf deinem Hauptrechner anwendest!
